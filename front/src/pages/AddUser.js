@@ -19,7 +19,7 @@ const handleSubmit = async () => {
         formData.append("image", data.image);
         formData.append("name",data.name);
 
-        const res = await fetch("http://localhost:3000/user",{method:"POST", body:formData,});
+        const res = await fetch(`${process.env.REACT_APP_SERVER_URL}/user`,{method:"POST", body:formData,});
         if(res.ok){
             setData({name: "", image: "",});
             navigate("/", {replace: true});

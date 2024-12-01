@@ -20,9 +20,9 @@ const Home = () => {
     return (
         <div>
            {users?.map( (user)=> (
-              <div>
+              <div width="200px" key={user._id}>
                 <img src={user.avatar} width={"100%"} height={200} />
-                <div>
+                <div className="p-4">
                     <h4>{user.name}</h4>
                     <div>
                         <Link to={`/edit/${user._id}`}>Edit</Link>
